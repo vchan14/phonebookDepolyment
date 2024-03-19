@@ -6,6 +6,9 @@ const morgan = require('morgan')
 const app = express();
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
+
 const customMorgan = (function (tokens, req, res) {
 	const output = [
 		tokens.method(req, res),
